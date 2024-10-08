@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NQKWHTVD');</script>
+<!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <style>
+        /* Your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .product-img {
+            max-width: 30%;
+            display: block;
+            margin-bottom: 20px;
+        }
+        .product-details {
+            margin-bottom: 20px;
+        }
+        .product-details h2 {
+            margin-top: 0;
+        }
+        .buy-now {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQKWHTVD"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <div class="container">
+        <img class="product-img" src="" alt="Product Image">
+        <div class="product-details">
+            <h2></h2>
+            <p>Description:</p>
+            <p>Price: $</p>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1" min="1" max="10">
+        </div>
+        <button class="buy-now">Buy Now</button>
+    </div>
+
+    <script>
+        // Extract product details from URL query parameter
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const product = urlParams.get('product');
+       
+
+        // Update product details based on the product identifier
+        if (product === 'lipstick') {
+            document.querySelector('.product-img').src = 'https://sdcdn.io/mac/in/mac_sku_S4K065_1x1_0.png?width=1440&height=1440';
+            document.querySelector('h2').textContent = 'Lipstick';
+            document.querySelector('.product-details p:nth-child(2)').textContent += ' A high-quality lipstick in various shades to enhance your lips.';
+            document.querySelector('.product-details p:nth-child(3)').textContent += '10.99';
+        } else if (product === 'mascara') {
+            document.querySelector('.product-img').src = 'https://static.thcdn.com/images/large/original//productimg/1600/1600/12765086-1834830290386011.jpg';
+            document.querySelector('h2').textContent = 'Mascara';
+            document.querySelector('.product-details p:nth-child(2)').textContent += ' Lengthening and volumizing mascara for stunning lashes.';
+            document.querySelector('.product-details p:nth-child(3)').textContent += '12.99';
+        } else if (product === 'foundation') {
+            document.querySelector('.product-img').src = 'https://akm-img-a-in.tosshub.com/sites/gloss99/resources/202212/1261222041846.png';
+            document.querySelector('h2').textContent = 'Foundation';
+            document.querySelector('.product-details p:nth-child(2)').textContent += ' Lightweight foundation for flawless coverage.';
+            document.querySelector('.product-details p:nth-child(3)').textContent += '14.99';
+
+        }
+
+        // Handle buy now button click
+        document.querySelector('.buy-now').addEventListener('click', function() {
+            // Get the selected quantity
+            const quantity = document.getElementById('quantity').value;
+
+            // You can implement the logic for purchasing the product with the selected quantity here
+            alert('Buy now functionality has not been implemented.\nQuantity: ' + quantity);
+        });
+    </script>
+</body>
+</html>
