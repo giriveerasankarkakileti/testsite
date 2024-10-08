@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #f2f2f2;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .container {
+           
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+           margin-right: 800px; 
+        }
+        form {
+            display: grid;
+            grid-template-columns: auto auto; /* Two columns */
+            grid-gap: 10px; /* Gap between grid items */
+            align-items: center;
+        }
+        label {
+            text-align: right; /* Align label text to right */
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%; /* Take up full width */
+            padding: 15px; /* Increase padding */
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button {
+            grid-column: span 2; /* Span the button across two columns */
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px; /* Increase padding */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sign In</h1>
+        <div></div> <!-- Empty div to align with header in index.html -->
+    </header>
+    <div class="container">
+        <form id="signInForm" >
+<!--onsubmit="return redirect()"-->
+            <label >First Name:</label>
+            <input type="text" id="firstNameId" name="first Name" required>
+            <label >Last Name:</label>
+            <input type="text" id="lastNameId" name="last Name" required>
+            <label >Country/Region:</label>
+            <input type="text" id="countryRegionId" name="country or Region " required>
+            <label >Email:</label>
+            <input type="email" id="emailId" name="email address" required>
+            <label >Password:</label>
+            <input type="password" id="passwordId" name="password Name" required>
+            <button type="submit" id = "signin" >Sign In</button>
+        </form>
+    </div>
+<script>
+        function redirect() {
+            // Redirect to the original page
+            window.location.href = "./index.html";
+            return false; // Prevent default form submission
+        }
+    </script>
+<script type="text/javascript"
+        src="https://cdn.c360a.salesforce.com/beacon/c360a/c3094ced-8ad6-4ce5-a178-28cc3779f9bf/scripts/c360a.min.js">
+
+    </script>
+
+
+
+</body>
+</html>
